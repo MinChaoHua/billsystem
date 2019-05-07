@@ -11,11 +11,13 @@ spring:
     port: 6379
   messages:
     basename: i81n.login
+  #禁用缓存，一修改就生效，ctrl+F9
+  thymeleaf:
+    cache: false
 
 
 mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
   config-location: classpath:mybatis/mybatis-config.xml
   type-aliases-package: com.bill.system.entity
-
 

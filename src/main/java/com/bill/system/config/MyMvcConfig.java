@@ -22,13 +22,13 @@ public class MyMvcConfig implements WebMvcConfigurer {
         /* 拦截器配置 ,注册拦截器*/
         @Override
         public void addInterceptors(InterceptorRegistry registry) {
-            registry.addInterceptor(new MyHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/","/index","index.html","/webjars/**");
+            registry.addInterceptor(new MyHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/","/index","index.html","/tologin","/webjars/**");
         }
-    /* 视图解析器 */
-    @Override
-    public void configureViewResolvers(ViewResolverRegistry registry) {
-
-    }
+//    /* 视图解析器 */
+//    @Override
+//    public void configureViewResolvers(ViewResolverRegistry registry) {
+//
+//    }
 
     // 所有的WebMvcConfigurerAdapter组件都会一起起作用
     @Bean
@@ -38,7 +38,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
             public void addViewControllers(ViewControllerRegistry registry) {
                 registry.addViewController("/").setViewName("index");
                 registry.addViewController("/index.html").setViewName("index");
-                registry.addViewController("/dashboard").setViewName("dashboard");
+                //registry.addViewController("/dashboard").setViewName("dashboard");
             }
         };
         return webMvcConfigurer;
