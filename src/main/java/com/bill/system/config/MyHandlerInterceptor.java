@@ -14,7 +14,10 @@ public class MyHandlerInterceptor implements HandlerInterceptor {
         if(user == null){
             //未登陆，返回登陆页面
             request.setAttribute("msg","没有权限请先登陆");
+            //转发
             request.getRequestDispatcher("/index.html").forward(request,response);
+            //重定向
+            //response.sendRedirect(request.getContextPath()+"/index.html");
             return false;
         }else{
             //已登陆，放行请求

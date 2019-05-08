@@ -18,8 +18,8 @@
         }
 
         .form-signin {
-            max-width: 300px;
-            padding: 19px 29px 29px;
+            max-width: 500px;
+            padding: 29px 29px 29px;
             margin: 0 auto 20px;
             background-color: #fff;
             border: 1px solid #e5e5e5;
@@ -51,16 +51,19 @@
 
 <div class="container">
 
-    <form class="form-signin">
+    <form class="form-signin" method="post" action="/tologin">
         <h2 class="form-signin-heading" th:text="#{login.top}">Please sign in</h2>
-        <p><input type="text" class="input-block-level" placeholder="userName">[[#{login.username}]]</p>
-        <p><input type="password" class="input-block-level" placeholder="Password">[[#{login.password}]]</p>
+        <p style="color: red" th:text="${msg}" th:if="${ not #strings.isEmpty(msg)}"></p>
+        <p><input type="text" class="input-block-level" placeholder="userName"  name="username">[[#{login.username}]]</p>
+        <p><input type="password" class="input-block-level" placeholder="Password"  name="password">[[#{login.password}]]</p>
         <label class="checkbox">
             <input type="checkbox" value="remember-me"> [[#{login.remmber}]]
         </label>
-        <button class="btn btn-large btn-primary" type="submit" th:text="#{login.bottom}">Sign in</button>
-        <a  th:href="@{/index.html(l='zh_CN')}">中文</a>
-        <a  th:href="@{/index.html(l='en_US')}">English</a>
+        <label><button class="btn btn-large btn-primary" type="submit" th:text="#{login.bottom}">Sign in</button></label>
+        <p>
+            <a class="btn btn-sm" th:href="@{/index.html(l='zh_CN')}">中文</a>
+            <a  class="btn btn-sm" th:href="@{/index.html(l='en_US')}">English</a>
+        </p>
 
 
 
