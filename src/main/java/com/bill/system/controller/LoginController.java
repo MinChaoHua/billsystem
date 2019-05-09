@@ -8,7 +8,6 @@ import org.thymeleaf.util.StringUtils;
 
 import javax.servlet.http.HttpSession;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
 
 @Controller
@@ -27,7 +26,7 @@ public class LoginController {
                           Map<String,Object> map, HttpSession session){
         if(!StringUtils.isEmpty(usernmae) && "mch".equals(password)){
             session.setAttribute("userinfo",usernmae);
-            return "redirect:/success.html";
+            return "redirect:/dashboard";
         }else{
             map.put("msg","用户名或密码错误");
             return "index";

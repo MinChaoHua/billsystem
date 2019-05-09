@@ -1,5 +1,7 @@
 server:
   port: 8080
+  tomcat:
+    uri-encoding: utf-8
 
 spring:
   datasource:
@@ -14,7 +16,6 @@ spring:
   #禁用缓存，一修改就生效，ctrl+F9
   thymeleaf:
     cache: false
-
 
 mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
