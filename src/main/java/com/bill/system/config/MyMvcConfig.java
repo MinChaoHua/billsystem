@@ -18,11 +18,11 @@ public class MyMvcConfig implements WebMvcConfigurer {
         public void addViewControllers(ViewControllerRegistry registry) {
             registry.addViewController("/login").setViewName("index");
         }
-        /* 拦截器配置 ,注册拦截器*/
+//        /* 拦截器配置 ,注册拦截器*/
         @Override
         public void addInterceptors(InterceptorRegistry registry) {
             registry.addInterceptor(new MyHandlerInterceptor()).addPathPatterns("/**")
-                    .excludePathPatterns("/index","/index.html","/login","/tologin");
+                    .excludePathPatterns("/index","/index.html","/login","/tologin","/static/**");
         }
 //    /* 视图解析器 */
 //    @Override
